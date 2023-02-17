@@ -6,7 +6,7 @@ const pool = new Pool({
     password: process.env.DB_PASSWORD,
     host: "dpg-ce40bkha6gdkr7rutou0-a",
     port: 5432,
-    database: "swizz"
+    database: "the_vault"
 });
 
 module.exports = pool;
