@@ -7,7 +7,7 @@ const pool = new Pool({
     host: "dpg-ce40bkha6gdkr7rutou0-a.oregon-postgres.render.com",
     port: 5432,
     database: "the_vault",
-    ssl: false
+    ssl: true
 });
 
 module.exports = pool;
