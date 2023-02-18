@@ -43,7 +43,7 @@ router.post("/create", async (req, res) => {
     // Hashes 4Digitpin
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
-    //  saves new customer
+     //saves new customer
      const newCustomer = await pool.query(
       "INSERT INTO customersswizz(first_name,middle_name,last_name,customer_email,customer_gender,customer_address,customer_phoneno,customer_dob,customer_password,customer_payment,c_date,c_time) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12) RETURNING *",
       [
@@ -65,8 +65,7 @@ router.post("/create", async (req, res) => {
     //gets new customer uuid and other details
     const customerID = newCustomer.rows[0].customer_id;
 
-    
-     if (accBal1.length > 1) {
+    if (accBal1.length > 1) {
       // Generates first 3 digits of the account number based on accType selected from client side
     let typeAcc = await function () {
       let usn = "";
@@ -76,7 +75,7 @@ router.post("/create", async (req, res) => {
         return (usn = accTypeCheckings);
       }
     };
-    // // Generates first 3 digits of the account number based on accType selected from client side
+    // Generates first 3 digits of the account number based on accType selected from client side
     let typeAcc1 = await function () {
       let usn = "";
       if (accountType1 === "Savings") {
@@ -112,7 +111,6 @@ router.post("/create", async (req, res) => {
         dayjs().format("HH:mm:ss")
       ]
     );
-
     return res.status(200).json({
       Registration: "Successful!",
       email: newCustomer.rows[0].customer_email,
@@ -142,7 +140,6 @@ router.post("/create", async (req, res) => {
         dayjs().format("HH:mm:ss")
       ]
     );
-
 
     return res.status(200).json({
       Registration: "Successful!",
@@ -199,3 +196,4 @@ router.post("/login", async (req, res) => {
 
 //Exports auth-routes.js
 module.exports = router;
+
