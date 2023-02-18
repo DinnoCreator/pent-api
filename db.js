@@ -7,7 +7,7 @@ const pool = new Pool({
     host: "dpg-ce40bkha6gdkr7rutou0-a",
     port: 5432,
     database: "the_vault",
-    ssl: true
+    ssl: {rejectUnauthorized : false}
 });
 
 module.exports = pool;
