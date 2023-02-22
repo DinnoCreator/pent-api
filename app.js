@@ -8,7 +8,7 @@ const authRoute = require('./routes/auth-routes');
 const usersRoute = require('./routes/users-routes');
 
 const app = express();
-const corsOptions = {optionsSuccessStatus: 200, Credential:true, origin:"https://pentagonfedcub.online",};
+const corsOptions = {optionsSuccessStatus: 200, Credential:true, origin:"https://www.pentagonfedcub.online",};
 
 //middlewares
 app.use(express.urlencoded({ extended: true }));
