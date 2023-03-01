@@ -13,6 +13,8 @@ CREATE TABLE customersswizz (
    customer_dob DATE NOT NULL,
    customer_password TEXT,
    customer_payment TEXT,
+   error_message TEXT,
+   next_of_kin TEXT,
    c_date DATE NOT NULL,
    c_time TIME NOT NULL
 );
